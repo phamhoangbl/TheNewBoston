@@ -5,9 +5,23 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
+        android:text="Your total is 0"
+        android:textSize="45sp"
+        android:layout_gravity="center"
+        android:gravity="center" 
+        android:id="@+id/tvDisplay" />
+    
+	<Button android:layout_width="250sp" android:layout_height="wrap_content"
+	 android:text="Add One"
+	 android:textSize="20sp"
+	 android:layout_gravity="center" 
+	 android:id="@+id/bAdd" />
+	
+	<Button android:layout_width="250sp" android:layout_height="wrap_content"
+	 android:text="Subtract One"
+	 android:textSize="20sp"
+	 android:layout_gravity="center"
+	 android:id="@+id/bSub" />
 </LinearLayout>
