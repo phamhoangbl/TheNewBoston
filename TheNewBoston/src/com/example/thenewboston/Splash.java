@@ -30,7 +30,7 @@ public class Splash extends Activity {
 				}
 				finally{
 					//Intent main = new Intent(getApplicationContext(), MainActivity.class);
-					Intent main = new Intent("android.intent.action.SplashJohn");
+					Intent main = new Intent("com.example.thenewboston.Menu");
 					startActivity(main);
 				}
 			}
