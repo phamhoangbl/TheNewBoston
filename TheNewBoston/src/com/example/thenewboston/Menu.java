@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Menu extends ListActivity {
-	private String[] _classes = { "MainActivity", "Example 1", "Example 1", "Example 1", "Example 1", "Example 1"};  
+	private String[] _classes = { "MainActivity", "TextPlay", "Example 1", "Example 1", "Example 1", "Example 1"};  
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
