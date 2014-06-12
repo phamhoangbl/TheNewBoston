@@ -13,23 +13,31 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 
-public class TextPlay extends Activity {
+public class TextPlay extends Activity implements View.OnClickListener {
 
+	EditText etCommand;
+	Button btResult;
+	ToggleButton tbPassword;
+	TextView tvResult;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.text);
 		
-		final EditText etCommand = (EditText) findViewById(R.id.etCommand);
-		Button btResult = (Button) findViewById(R.id.btResult);
-		final ToggleButton tbPassword = (ToggleButton) findViewById(R.id.tbPassword);
-		final TextView tvResult = (TextView) findViewById(R.id.tvResult);
+		etCommand = (EditText) findViewById(R.id.etCommand);
+		btResult = (Button) findViewById(R.id.btResult);
+		tbPassword = (ToggleButton) findViewById(R.id.tbPassword);
+		tvResult = (TextView) findViewById(R.id.tvResult);
 		
-		tbPassword.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
+		tbPassword.setOnClickListener(this);
+		btResult.setOnClickListener(this);
+	}
+	
+	public void onClick(View v) {
+		switch(v.getId()){
+			case R.id.tbPassword:
 				// TODO Auto-generated method stub
 				if(tbPassword.isChecked()){
 					etCommand.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
@@ -37,14 +45,8 @@ public class TextPlay extends Activity {
 				else{
 					etCommand.setInputType(InputType.TYPE_CLASS_TEXT);
 				}
-			}
-		});
-		
-		btResult.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				break;
+			case R.id.btResult:
 				String text = etCommand.getText().toString();
 				if(text.contentEquals("left")){
 					tvResult.setGravity(Gravity.LEFT);
@@ -58,9 +60,20 @@ public class TextPlay extends Activity {
 					Random random = new Random();
 					tvResult.setTextSize(random.nextInt(75));
 					tvResult.setTextColor(Color.rgb(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
+					
+					switch(random.nextInt(3)){
+					case 1: 
+						tvResult.setGravity(Gravity.LEFT);
+						break;
+					case 2: 
+						tvResult.setGravity(Gravity.CENTER);
+						break;
+					case 3: 
+						tvResult.setGravity(Gravity.RIGHT);
+						break;
+					}
 				}
-			}
-		});
+				break;
+		}
 	}
-	
 }
