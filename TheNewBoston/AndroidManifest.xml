@@ -42,6 +42,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".AboutUs"
+            android:label="@string/title_activity_main" android:theme="@android:style/Theme.Dialog" >
+            <intent-filter>
+                <action android:name="com.example.thenewboston.AboutUs"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Email"
             android:label="@string/title_activity_main" >
             <intent-filter>
