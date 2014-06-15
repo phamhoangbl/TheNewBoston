@@ -57,6 +57,22 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Data"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="com.example.thenewboston.Data"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".OpenedClass"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="com.example.thenewboston.OpenedClass"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
