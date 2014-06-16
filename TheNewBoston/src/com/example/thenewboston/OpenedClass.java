@@ -2,7 +2,9 @@ package com.example.thenewboston;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.*;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -20,6 +22,14 @@ public class OpenedClass extends Activity implements View.OnClickListener, OnChe
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.send);
 		intialize();
+		
+		SharedPreferences currentPreference = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		String text = currentPreference.getString("name", "Default Text");
+		String optionValues = currentPreference.getString("list", "Default list");
+		if(optionValues.contentEquals("2")){
+			tvQuestion.setText(text);
+		}
+		
 //Comment it in this if Start Activity, Comment it out this if Start Activity For Result
 //		Bundle basket = getIntent().getExtras();
 //		String bread = basket.getString("key");
