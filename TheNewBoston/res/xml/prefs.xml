@@ -7,9 +7,10 @@
         android:title="Edit Text" />
 
     <CheckBoxPreference
-        android:key="checkbox"
-        android:summary="Check this box"
-        android:title="Check box" />
+        android:key="musicFlashCheckbox"
+        android:defaultValue="true"
+        android:summary="Check this box to enable/disable musich flash"
+        android:title="Music Flash" />
 
     <ListPreference
         android:entries="@array/listOption"

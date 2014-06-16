@@ -3,8 +3,10 @@ package com.example.thenewboston;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 
 public class Splash extends Activity {
 
@@ -17,7 +19,11 @@ public class Splash extends Activity {
 		
 		//splash music
 		splashSong = MediaPlayer.create(Splash.this, R.raw.splash_sound);
-		splashSong.start();
+		SharedPreferences currentPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+		boolean enableMusicFlash = currentPrefs.getBoolean("musicFlashCheckbox", true);
+		if (enableMusicFlash) {
+			splashSong.start();
+		}
 		
 		Thread timer = new Thread(){
 			@Override
