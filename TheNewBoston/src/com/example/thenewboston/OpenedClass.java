@@ -30,6 +30,8 @@ public class OpenedClass extends Activity implements View.OnClickListener, OnChe
 			tvQuestion.setText(text);
 		}
 		
+		
+		
 //Comment it in this if Start Activity, Comment it out this if Start Activity For Result
 //		Bundle basket = getIntent().getExtras();
 //		String bread = basket.getString("key");
