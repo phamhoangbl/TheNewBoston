@@ -51,6 +51,13 @@ public class Menu extends ListActivity {
 			Intent about = new Intent("com.example.thenewboston.AboutUs");
 			startActivity(about);
 			break;
+		case R.id.refference:
+			Intent prefs = new Intent("com.example.thenewboston.Prefs");
+			startActivity(prefs);
+			break;
+		case R.id.exist:
+			finish();
+			break;
 		}
 		return false;
 	}
