@@ -31,10 +31,11 @@ public class MyGraphic extends View {
 		canvas.drawColor(Color.CYAN);
 		//canvas.drawBitmap(scaleBitmap, canvas.getWidth()/2, changeY, null);
 		canvas.drawBitmap(scaleBitmap, changeX, changeY, null);
+		canvas.drawBitmap(scaleBitmap, changeY, changeX, null);
 		
 		if(changeY < canvas.getHeight()){
 			changeY += 50;
-			changeX += 5;
+			changeX += 25;
 		}		
 		else{
 			changeY = 0;
