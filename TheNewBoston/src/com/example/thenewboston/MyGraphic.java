@@ -6,12 +6,15 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.BitmapFactory.Options;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.view.View;
 
 public class MyGraphic extends View {
 
 	Bitmap ball;
-
+	int changeY = 0;
+	int changeX = 0;
 	public MyGraphic(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
@@ -26,8 +29,25 @@ public class MyGraphic extends View {
 		Bitmap scaleBitmap = ball.createScaledBitmap(ball, 70, 70, true);
 		
 		canvas.drawColor(Color.CYAN);
-		canvas.drawBitmap(scaleBitmap, canvas.getWidth()/2, 0, null);
+		//canvas.drawBitmap(scaleBitmap, canvas.getWidth()/2, changeY, null);
+		canvas.drawBitmap(scaleBitmap, changeX, changeY, null);
+		
+		if(changeY < canvas.getHeight()){
+			changeY += 50;
+			changeX += 5;
+		}		
+		else{
+			changeY = 0;
+			changeX = 0;
+		}
+		
+		//draw Rect
+		Rect rect = new Rect();
+		rect.set(0, 400, canvas.getWidth(), 550);
+		Paint paint = new Paint();
+		paint.setColor(Color.BLACK);
+		canvas.drawRect(rect, paint);
+		
+		invalidate();
 	}
-
-	
 }
