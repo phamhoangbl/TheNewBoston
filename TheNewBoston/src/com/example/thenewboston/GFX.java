@@ -1,0 +1,19 @@
+package com.example.thenewboston;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class GFX extends Activity {
+	MyGraphic myGraphic;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		
+		myGraphic = new MyGraphic(this);
+		setContentView(myGraphic);
+	}
+	
+	
+}

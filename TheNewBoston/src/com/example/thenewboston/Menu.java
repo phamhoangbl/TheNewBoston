@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Menu extends ListActivity {
-	private String[] _classes = { "MainActivity", "TextPlay", "Email", "Camera", "Data", "Example 1"};  
+	private String[] _classes = { "MainActivity", "TextPlay", "Email", "Camera", "Data", "GFX"};  
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
