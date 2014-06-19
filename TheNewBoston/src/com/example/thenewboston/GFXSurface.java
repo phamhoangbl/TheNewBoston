@@ -23,7 +23,9 @@ public class GFXSurface extends Activity implements OnTouchListener {
 	public boolean onTouch(View v, MotionEvent event) {
 		// TODO Auto-generated method stub
 		graphic.SetXY(event.getX(), event.getY());
-		return false;
+		//return true if wish hold on for drag
+		return true;
+		//return false;
 	}
 
 	@Override

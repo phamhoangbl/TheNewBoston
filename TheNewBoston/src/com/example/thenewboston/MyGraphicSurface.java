@@ -64,7 +64,7 @@ public class MyGraphicSurface extends SurfaceView implements Runnable {
 			if(x!=0 && y!=0){
 				Bitmap test = BitmapFactory.decodeResource(getResources(), R.drawable.ball);
 				Bitmap scaleBitmap = test.createScaledBitmap(test, 70, 70, true);
-				canvas.drawBitmap(scaleBitmap, x, y, null);
+				canvas.drawBitmap(scaleBitmap, x - 35, y - 35, null);
 			}
 			else {
 				Paint paintText = new Paint();
