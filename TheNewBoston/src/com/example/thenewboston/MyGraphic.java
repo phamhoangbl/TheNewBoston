@@ -64,7 +64,7 @@ public class MyGraphic extends View {
 		paintText.setTextAlign(Align.CENTER);
 		paintText.setTypeface(font);
 		
-		canvas.drawText("Hello John", canvas.getWidth()/2, 200, paintText);
+		canvas.drawText("Hello John\n gab", canvas.getWidth()/2, 200, paintText);
 		
 		invalidate();
 	}
