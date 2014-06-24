@@ -41,4 +41,12 @@ public class SoundStuff extends Activity implements OnClickListener, OnLongClick
 		return false;
 	}
 
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		longSong.release();
+	}
+
+	
 }
