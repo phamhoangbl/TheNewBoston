@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+   	<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" android:weightSum="10" >
+   		<EditText android:id="@+id/etUrlAddress" android:layout_weight="2" android:hint="Type a address"
+   		    android:layout_width="match_parent"
+   		    android:layout_height="wrap_content"/>
+   		<Button android:id="@+id/btGo" android:layout_height="wrap_content"
+   		    android:layout_width="match_parent"
+             android:text="Go" android:layout_weight="8"/>
+	</LinearLayout>
+    
+	<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" android:weightSum="8" >
+   		<Button android:id="@+id/btBack" android:layout_height="wrap_content"
+             android:text="Go Back a Page" android:layout_weight="2" android:layout_width="match_parent"/>
+		<Button android:id="@+id/btForward" android:layout_height="wrap_content"
+             android:text="Go Forward" android:layout_weight="2" android:layout_width="match_parent"/>
+		<Button android:id="@+id/btRefesh" android:layout_height="wrap_content"
+             android:text="Refesh Page" android:layout_weight="2" android:layout_width="match_parent"/>
+		<Button android:id="@+id/btClearHistory" android:layout_height="wrap_content"
+             android:text="Clear History" android:layout_weight="2" android:layout_width="match_parent"/>
+	</LinearLayout>
+
+	<WebView
+	    android:id="@+id/wvBrowser"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" />
+	
+</LinearLayout>
