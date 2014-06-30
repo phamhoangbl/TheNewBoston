@@ -82,7 +82,13 @@ public class Tabs extends Activity implements OnClickListener{
 			if(start != 0){
 				stop = System.currentTimeMillis();
 				long spam = stop - start;
-				tvResult.setText(Long.toString(spam));
+				int millis = (int)spam;
+				int seconds = millis / 1000;
+				int mins = seconds / 60;
+				millis = millis % 100;
+				seconds = seconds % 60; 
+				
+				tvResult.setText(String.format("%d:%02d:%02d", mins, seconds, millis));
 			}
 			
 			break;
