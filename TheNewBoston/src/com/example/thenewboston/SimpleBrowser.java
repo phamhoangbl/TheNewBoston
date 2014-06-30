@@ -1,9 +1,12 @@
 package com.example.thenewboston;
 
 import android.app.Activity;
+import android.content.Context;
+import android.hardware.input.InputManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.*;
 import android.widget.*;
 
@@ -12,6 +15,7 @@ public class SimpleBrowser extends Activity implements OnClickListener {
 	WebView webView;
 	Button btGo, btBack, btForward, btRefesh, btClearHistory; 
 	EditText etUrlAddress;
+	InputMethodManager input;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,10 @@ public class SimpleBrowser extends Activity implements OnClickListener {
 		
 		//call directly the URL 
 		webView.setWebViewClient(new CustomViewClient());
+		
+		//input 
+		input = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		input.showSoftInputFromInputMethod(etUrlAddress.getWindowToken(), 0);
 	}
 
 	@Override
@@ -51,6 +59,7 @@ public class SimpleBrowser extends Activity implements OnClickListener {
 		case R.id.btGo:
 			String address = etUrlAddress.getText().toString();
 			webView.loadUrl(address);
+			input.hideSoftInputFromInputMethod(etUrlAddress.getWindowToken(), 0);
 			break;
 		case R.id.btBack:
 			if(webView.canGoBack()){
