@@ -35,6 +35,7 @@ public class SimpleBrowser extends Activity implements OnClickListener {
 		btRefesh.setOnClickListener(this);
 		btClearHistory.setOnClickListener(this);
 		webView = (WebView) findViewById(R.id.wvBrowser);
+		webView.setWebViewClient(new CustomViewClient());
 	}
 
 	@Override
