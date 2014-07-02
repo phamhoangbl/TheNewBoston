@@ -147,6 +147,38 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Flipper"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="com.example.thenewboston.Flipper"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SharedPrefs"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="com.example.thenewboston.SharedPrefs"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".InternalData"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="com.example.thenewboston.InternalData"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AsyncTaskInternalData"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="com.example.thenewboston.AsyncTaskInternalData"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

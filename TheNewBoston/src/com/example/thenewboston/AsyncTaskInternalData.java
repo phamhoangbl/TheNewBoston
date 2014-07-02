@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -93,7 +94,7 @@ public class AsyncTaskInternalData  extends Activity implements OnClickListener{
 	
 	//Async task 
 	public class LoadSomeStuff extends AsyncTask<String, Integer, String>{
-
+		ProgressDialog dialog;
 
 		@Override
 		protected void onPostExecute(String result) {
@@ -106,6 +107,19 @@ public class AsyncTaskInternalData  extends Activity implements OnClickListener{
 			// TODO Auto-generated method stub
 			String collected = null;
 			FileInputStream fis = null;
+			
+			int callProgressUpdate = 10;
+			for(int i = 0; i< callProgressUpdate; i++){
+				//pulish prgress(5), 5 is parametter to increase dialog progress.
+				publishProgress(10);
+				try {
+					Thread.sleep(500); //500 mili seconds
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			dialog.dismiss();
 			try {
 				//params[0] = FILENAME
 				 fis = openFileInput(params[0]);
@@ -132,6 +146,23 @@ public class AsyncTaskInternalData  extends Activity implements OnClickListener{
 				}
 			}
 			return null;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			dialog = new ProgressDialog(AsyncTaskInternalData.this);
+			dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+			
+			//SetMax = 100, there are 100 unit persent to finish the progress
+			dialog.setMax(100);
+			dialog.show();
+		}
+
+		@Override
+		protected void onProgressUpdate(Integer... values) {
+			// TODO Auto-generated method stub
+			dialog.incrementProgressBy(values[0]);
 		}
 		
 	}
