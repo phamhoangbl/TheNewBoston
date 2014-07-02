@@ -171,6 +171,14 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AsyncTaskInternalData"
+            android:label="@string/title_activity_main" >
+            <intent-filter>
+                <action android:name="com.example.thenewboston.AsyncTaskInternalData"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
